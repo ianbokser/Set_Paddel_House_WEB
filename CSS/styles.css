@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: right;
+    font-family: Montserrat, sans-serif;
+}
+
+body{
+    background-color: #97BF04;
+}
+
+.header{
+    display: flex;
+    background-color: green;
+    padding: 20px;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.imglogo{
+    width: 10rem;
+}
+
+.titulo{
+    text-decoration: none;
+    color: black;
+}
+
+.items a li{
+    list-style: none;
+    display: inline-block;
+    color: black;
+    font-size: 2rem;
+    margin: 7% .2rem;
+    justify-items: right;
+    transition: .3s;
+}
+
+.items a li:hover{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.image_cancha{
+    display: flex;
+    width: 100%;
+}
+
+.whatsapp{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.img-whatsapp{
+    width: 5rem;
+}
