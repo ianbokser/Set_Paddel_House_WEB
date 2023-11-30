@@ -1,60 +1,254 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     justify-content: right;
-    font-family: Montserrat, sans-serif;
+    max-width: 100%;
+    font-family: 'DM Sans';
 }
 
-body{
-    background-color: #97BF04;
+body {
+    background-image: url("../IMAGES/cancha2.jpg");
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-.header{
+/*          HEADER          */
+
+.header {
     display: flex;
-    background-color: green;
-    padding: 20px;
+    background: linear-gradient(#18d266, #004f1e);
     justify-content: space-between;
+    padding: 20px;
     width: 100%;
     height: 150px;
-    margin-bottom: 20px;
-}
 
-.imglogo{
+}
+.imglogo {
     width: 10rem;
+    position: relative;
+    top: 15%;
 }
 
-.titulo{
-    text-decoration: none;
-    color: black;
+.items {
+    margin-right: 5rem ;
 }
 
-.items a li{
+.items_nav {
     list-style: none;
     display: inline-block;
     color: black;
     font-size: 2rem;
-    margin: 7% .2rem;
+    margin: 5% 1rem;
     justify-items: right;
     transition: .3s;
 }
 
-.items a li:hover{
+.items_nav:hover {
     color: white;
     letter-spacing: 2px;
 }
 
-.image_cancha{
-    display: flex;
-    width: 100%;
+.register a{
+    text-decoration: none;
+    color: black;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    transition: .3s;
 }
 
-.whatsapp{
+/*          MAIN          */
+
+.main{
+    height: 100vh;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background: linear-gradient(#18d266cd, #004f1e82);
+    border-radius: 10px;
+    padding: 2rem;
+    color: white;
+    margin: 30px;
+}
+
+.text_decoration{
+    text-decoration: none;
+    color: black;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.description{
+    background-color: black;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: left;
+    width: 40rem;
+    height: 30rem;
+    transition: .3s;
+}
+
+.description:hover{
+    background: linear-gradient(#18d266, #004f1e);
+}
+
+.location{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.lugar {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.whatsapp {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    z-index: 1;
 }
 
 .img-whatsapp{
     width: 5rem;
+}
+
+/*          FOOTER          */
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    padding: 3rem 10rem 3rem 3rem;
+    background: linear-gradient(#18d266, #004f1e);
+}
+
+.data_footer {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    display: flex;
+}
+
+.data_footer div{
+    margin: 0 4rem;
+}
+
+.redes_sociales div {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.instagram {
+    width: 40px;
+}
+
+.twitter {
+    width: 40px;
+    border-radius: 10px;
+}
+
+.compaña{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+/*Iniciar Sesión/Registrarse*/
+
+.Sing_Up{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Sing_Up div{
+    margin: 10px;
+}
+
+.register_page{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: linear-gradient(#18d266c0, #004f1ecc);
+    padding: 1.5rem;
+    width: 30rem;
+}
+
+.Registrarse{
+    font-size: 50px;
+}
+
+.inputs_register{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+}
+
+.inputs_register:focus{
+    outline: none;
+}
+
+.inputs_register::placeholder{
+    color: black;
+}
+
+.forgot_password{
+    display: flex;
+}
+
+.olvidaste_contraseña{
+    justify-content: end;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+.boton_registrarse{
+    background-color: rgb(0, 255, 76);
+    width: 20rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ya_tiene_cuenta{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.ya_tiene_cuenta p a{
+    text-decoration: none;
+    color: rgb(0, 255, 76);
 }

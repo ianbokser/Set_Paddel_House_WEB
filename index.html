@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Padel House</title>
     <link rel="stylesheet" href="./CSS\styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@1,100;1,700&family=Roboto:wght@700&family=Vina+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="comunication">
@@ -13,27 +16,75 @@
     <header class="header">
         <div class="logo">
             <a href="index.html"><img class="imglogo" src="IMAGES\set_padel (sin_fondo).png" alt="logo de Set_Padel_house"></a>
-            <a class="titulo" href="index.html"><h1 >Set Padel House</h1></a>
         </div>
         <nav class="bar"></nav>
             <div class="lista">
                 <ul class="items">
-                    <a href=""><li>Inicio</li></a>
-                    <a href="Pages\Alquilar.html"><li>Alquilar</li></a>
-                    <a href="Pages\Sobre_Nosotros.html"><li>Sobre Nosotros</li></a>
-                    <a href="Pages\Contactanos.html"><li>Contactanos</li></a>
+                    <a href=""><li class="items_nav">INICIO</li></a>
+                    <a href="Pages\Alquilar.html"><li class="items_nav">ALQUILAR</li></a>
+                    <a href="Pages\Sobre_Nosotros.html"><li class="items_nav">SOBRE NOSOTROS</li></a>
+                    <a href="Pages\Contactanos.html"><li class="items_nav">CONTACTANOS</li></a>
                 </ul>
             </div>
         </nav>
+        <div class="register">
+            <a href="Pages\Login_In.html">Iniciar Sesión</a>
+            <a href="Pages\Login_Up.html">Registrarse</a>
+        </div>
     </header>
     <main class="main">
-        <section class="hero">
-            <img class="image_cancha" src="IMAGES\pelota.png">
-            <a class="location" href="">📍Tribulato 540, San Miguel</a>
-        </section>
+        <div class="cards">
+            <div class="card">
+                <div>
+                    <h1 class="titulo">Set Padel House</h1>
+                </div>
+                <div>
+                    <p class="description">¡Descubre un lugar donde el pádel cobra vida! Bienvenido a tu destino predilecto para alquilar canchas de pádel y vivir la emoción de este deporte con nosotros.</p>
+                </div>
+            </div>
+            <div>
+                <a class="text_decoration" href="Pages\Alquilar.html">
+                    <div class="card">
+                        <div>
+                            <h2 class="titulo">ALQUILA AQUÍ</h2>
+                        </div>
+                        <div>
+                            <p class="description">En nuestro sitio web, podrás explorar fácilmente las disponibilidades de las canchas, realizar reservas con solo unos clics y conocer más sobre los servicios adicionales que ofrecemos, como clases de pádel, eventos especiales y promociones exclusivas. Nos esforzamos por crear una experiencia única para cada visitante, combinando la pasión por el pádel con un ambiente acogedor y servicios de calidad.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="location">
+            <a class="lugar" href="https://www.google.com/maps/place/Concejal+Tribulato+540,+B1663MWL+San+Miguel,+Provincia+de+Buenos+Aires/@-34.5356777,-58.7106859,17z/data=!4m6!3m5!1s0x95bcbd16ae39f445:0x4575b2832f3d486d!8m2!3d-34.5356821!4d-58.7081056!16s%2Fg%2F11gr6cdkq_?entry=ttu" target="_blank" class="lugar">📍Concejal Tribulato 540, San Miguel</a>
+        </div>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="imglogo">
+            <a href="index.html"><img src="IMAGES\set_padel (sin_fondo).png" alt="Set_Padel_house"></a>
+        </div>
+        <section class="data_footer">
+            <div class="redes_sociales">
+                <div class="redes_sociales">
+                    <h3><b>Redes sociales</b></h3>
+                    <a href="https://www.instagram.com/set.padelhouse/" target="_blank"><img class="instagram" src="IMAGES\Instagaram.png" alt="instagram"></a>
+                    <a href=""><img class="twitter"  src="IMAGES\twitter.jpeg" alt=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h3><b>Compaña</b></h3>
+                </div>
+                <div>
+                    <ul>
+                        <a class="compaña" href="Pages\Sobre_Nosotros.html"><li>Nosostros</li></a>
+                        <li class="compaña">Nuestros Servicios</li>
+                        <li class="compaña">Políticas De Privacidad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </footer>
 </body>
 </html>
