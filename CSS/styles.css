@@ -59,7 +59,7 @@ body {
 /*          MAIN          */
 
 .main{
-    height: 100vh;
+    height: 100%;
 }
 
 .cards{
@@ -68,6 +68,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 0 20%;
 }
 
 .card{
@@ -75,7 +76,6 @@ body {
     border-radius: 10px;
     padding: 2rem;
     color: white;
-    width: 50rem;
     margin: 30px;
 }
 
@@ -95,9 +95,10 @@ body {
     padding: 20px;
     font-size: 2rem;
     text-align: left;
-    width: 40rem;
+    width: 43rem;
     height: 30rem;
     transition: .3s;
+    overflow:scroll;
 }
 
 .description:hover{
@@ -261,6 +262,34 @@ body {
         margin-bottom: 2rem;
     }
 
+    .card{
+        width: 35rem;
+    }
+
+    .lugar {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1154px){
+    .items_nav {
+        font-size: 1rem;
+        margin: 10% 1rem;
+    }
+    
+    .register a{
+        font-size: 1rem;
+    }
+
     .cards{
+        display: flex;
+        justify-content: space-around;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lugar {
+        font-size: 2rem;
     }
 }
