@@ -62,21 +62,21 @@ body {
     height: 100%;
 }
 
-.cards{
+.cartas{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 20%;
 }
 
 .card{
     background: linear-gradient(#18d266cd, #004f1e82);
-    border-radius: 10px;
     padding: 2rem;
-    color: white;
-    margin: 30px;
+    margin: 4rem 10px;
+    width: 25rem !important;
+}
+
+.card-text{
+    text-align: center;
 }
 
 .text_decoration{
@@ -87,37 +87,15 @@ body {
 .titulo{
     display: flex;
     justify-content: center;
-}
-
-.description{
-    background-color: black;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 2rem;
-    text-align: left;
-    width: 43rem;
-    height: 30rem;
-    transition: .3s;
-    overflow:scroll;
-}
-
-.description:hover{
-    background: linear-gradient(#18d266, #004f1e);
-}
-
-.location{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-}
-
-.lugar {
-    text-decoration: none;
     color: white;
-    font-size: 4rem;
-    font-weight: bold;
-    background-color: black;
-    border-radius: 10px;
+}
+
+.card-text{
+    color: white;
+}
+
+.card:hover{
+    background: linear-gradient(#01ad49, #004f1e);
 }
 
 .whatsapp {
@@ -251,7 +229,7 @@ body {
     color: rgb(0, 255, 76);
 }
 
-@media (max-width: 1470px){
+@media (max-width: 1500px){
     .items_nav {
         font-size: 1.5rem;
         margin: 7% 1rem;
@@ -271,7 +249,7 @@ body {
     }
 }
 
-@media (max-width: 1154px){
+@media (max-width: 1200px){
     .items_nav {
         font-size: 1rem;
         margin: 10% 1rem;
@@ -292,4 +270,8 @@ body {
     .lugar {
         font-size: 2rem;
     }
+}
+
+@media (max-width: 970px){
+
 }

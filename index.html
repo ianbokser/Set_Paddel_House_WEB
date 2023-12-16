@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Padel House</title>
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS\styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
         </div>
         <nav class="bar"></nav>
             <div class="lista">
-                <ul class="items">
+                <ul class="items">                          
                     <a href=""><li class="items_nav">INICIO</li></a>
                     <a href="Pages\Alquilar.html"><li class="items_nav">ALQUILAR</li></a>
                     <a href="Pages\Sobre_Nosotros.html"><li class="items_nav">SOBRE NOSOTROS</li></a>
@@ -32,32 +33,25 @@
             <a href="./Pages/Sing_Up.html">Registrarse</a>
         </div>
     </header>
-    <main class="main">
-        <div class="cards">
-            <div class="card">
-                <div>
+    <main class="main container">
+        <section class="cartas row">
+            <div class="card col-6">
+                <img src="/IMAGES/cancha.jpg" class="card-img-top" alt="lugar">
+                <div class="card-body">
                     <h1 class="titulo">Set Padel House</h1>
-                </div>
-                <div>
-                    <p class="description">¡Descubre un lugar donde el pádel cobra vida! Bienvenido a tu destino predilecto para alquilar canchas de pádel y vivir la emoción de este deporte con nosotros.</p>
+                  <p class="card-text">Descubre un lugar donde el pádel cobra vida! Bienvenido a tu destino predilecto para alquilar canchas de pádel y vivir la emoción de este deporte con nosotros.</p>
                 </div>
             </div>
-            <div>
-                <a class="text_decoration" href="Pages\Alquilar.html">
-                    <div class="card">
-                        <div>
-                            <h2 class="titulo">ALQUILA AQUÍ</h2>
-                        </div>
-                        <div>
-                            <p class="description">En nuestro sitio web, podrás explorar fácilmente las disponibilidades de las canchas, realizar reservas con solo unos clics y conocer más sobre los servicios adicionales que ofrecemos, como clases de pádel, eventos especiales y promociones exclusivas. Nos esforzamos por crear una experiencia única para cada visitante, combinando la pasión por el pádel con un ambiente acogedor y servicios de calidad.</p>
-                        </div>
-                    </div>
+            <div class="card col-6">
+                <a class="text_decoration col" href="Pages\Alquilar.html"></a>
+                <img src="/IMAGES/pelota.png" class="card-img-top" alt="alquilar">
+                <div class="card-body">
+                    <h2 class="titulo">ALQUILA AQUÍ</h2>
+                    <p class="card-text">En nuestro sitio web, podrás explorar fácilmente las disponibilidades de las canchas, realizar reservas con solo unos clics y conocer más sobre los servicios adicionales que ofrecemos, como clases de pádel, eventos especiales y promociones exclusivas. Nos esforzamos por crear una experiencia única para cada visitante, combinando la pasión por el pádel con un ambiente acogedor y servicios de calidad.</p>
+                </div>
                 </a>
             </div>
-        </div>
-        <div class="location">
-            <a class="lugar" href="https://www.google.com/maps/place/Concejal+Tribulato+540,+B1663MWL+San+Miguel,+Provincia+de+Buenos+Aires/@-34.5356777,-58.7106859,17z/data=!4m6!3m5!1s0x95bcbd16ae39f445:0x4575b2832f3d486d!8m2!3d-34.5356821!4d-58.7081056!16s%2Fg%2F11gr6cdkq_?entry=ttu" target="_blank" class="lugar">📍Concejal Tribulato 540, San Miguel</a>
-        </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="imglogo">
@@ -86,5 +80,6 @@
             </div>
         </section>
     </footer>
+    <script src="/JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>
