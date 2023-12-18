@@ -176,6 +176,7 @@ body {
 
 .Registrarse{
     font-size: 50px;
+    text-align: center;
 }
 
 .inputs_register{
@@ -229,6 +230,37 @@ body {
     color: rgb(0, 255, 76);
 }
 
+/*      Sobre Nosotros      */
+
+.main-nosotros{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-sobrenosotros{
+    align-items:baseline;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.grid-cards{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 0.7fr);
+    margin: 70px;
+    grid-gap: 30px;
+}
+
+.grid-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#18d266c0, #004f1ecc);
+    border: white solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 @media (max-width: 1500px){
     .items_nav {
         font-size: 1.5rem;
@@ -242,10 +274,6 @@ body {
 
     .card{
         width: 35rem;
-    }
-
-    .lugar {
-        font-size: 3rem;
     }
 }
 
@@ -265,10 +293,6 @@ body {
         flex-direction:column;
         align-items: center;
         justify-content: center;
-    }
-
-    .lugar {
-        font-size: 2rem;
     }
 }
 
