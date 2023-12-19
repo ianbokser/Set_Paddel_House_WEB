@@ -112,22 +112,10 @@ body {
 /*          FOOTER          */
 
 .footer {
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    padding: 3rem 10rem 3rem 3rem;
-    background: linear-gradient(#18d266, #004f1e);
-}
-
-.data_footer {
-    position: absolute;
-    top: 30%;
-    left: 20%;
     display: flex;
-}
-
-.data_footer div{
-    margin: 0 4rem;
+    padding: 3rem 10rem 3rem 3rem;
+    justify-content: space-between;
+    background: linear-gradient(#18d266, #004f1e);
 }
 
 .redes_sociales div {
@@ -142,6 +130,10 @@ body {
 .twitter {
     width: 40px;
     border-radius: 10px;
+}
+
+.comp{
+    margin-right: 15rem;
 }
 
 .compaña{
@@ -247,7 +239,7 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(1, 0.7fr);
-    margin: 70px;
+    margin: 0 0 10rem 0;
     grid-gap: 30px;
 }
 
