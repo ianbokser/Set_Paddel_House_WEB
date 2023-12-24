@@ -1,0 +1,39 @@
+.header {   
+    display: flex;
+    background: linear-gradient(#18d266, #004f1e);
+    justify-content: space-between;
+    width: 100%;
+    .nav{
+        background: linear-gradient(#15c05c, #036027);
+        width: 100%;
+        height: fit-content;
+        .margin{
+            margin: 0 150px;
+        }
+
+    .navbar-brand{
+        font-size: 1.4rem;
+    }
+    
+    .hover:hover {
+        color: white;
+        letter-spacing: 2px;
+    }
+
+    .flex{
+        display: flex !important;
+        justify-content:space-around !important;
+    }
+
+    .register{
+        margin: 50px;
+    }
+
+    .register a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.4rem !important;
+        margin: 9px;
+    }
+    }
+}

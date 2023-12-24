@@ -1,0 +1,42 @@
+
+@media (max-width: 1500px){
+    .register a{
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .card{
+        width: 35rem;
+    }
+}
+
+@media (max-width: 1200px){
+    .register a{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 990px){
+    .comp{
+        margin-right: 7rem;
+    }
+}
+
+@media (max-width: 810px){
+    .contact-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 500px){
+    .register_page{
+        width: 100%;
+    }
+
+    .cartas{
+        display: flex;
+        justify-content:space-evenly;
+        flex-direction: row;
+        margin: 0;
+    }
+}

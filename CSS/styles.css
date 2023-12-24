@@ -40,22 +40,6 @@ body {
     margin: 0 150px;
 }
 
-/* .imglogo {
-    width: 10rem;
-    position: relative;
-    top: 15%;
-} */
-/* 
-.items_nav {
-    list-style: none;
-    display: inline-block;
-    color: black;
-    font-size: 2rem;
-    margin: 5% 1rem;
-    justify-items: right;
-    transition: .3s;
-} */
-
 .navbar-brand{
     font-size: 1.4rem;
 }
@@ -79,7 +63,7 @@ body {
 /*          MAIN          */
 
 .main{
-    height: 100%;
+    width: 100%;
 }
 
 .cartas{
@@ -87,6 +71,7 @@ body {
     justify-content:space-evenly;
     flex-direction: row;
 }
+
 
 .card{
     background: linear-gradient(#18d266cd, #004f1e82);
@@ -97,6 +82,7 @@ body {
 
 .card-text{
     text-align: center;
+    color: white;
 }
 
 .text_decoration{
@@ -107,10 +93,6 @@ body {
 .titulo{
     display: flex;
     justify-content: center;
-    color: white;
-}
-
-.card-text{
     color: white;
 }
 
@@ -133,13 +115,10 @@ body {
 
 .footer {
     display: flex;
-    padding: 3rem 10rem 3rem 3rem;
+    padding: 3rem;
     justify-content: space-between;
+    width: 100%;
     background: linear-gradient(#18d266, #004f1e);
-}
-
-.redes_sociales div {
-    margin-bottom: 20px;
 }
 
 .instagram {
@@ -149,7 +128,7 @@ body {
 .twitter {
     width: 40px;
     border-radius: 10px;
-}
+}   
 
 .comp{
     margin-right: 15rem;
@@ -171,7 +150,7 @@ body {
     justify-content: center;
 }
 
-.Sing_Up div{
+.register_page div{
     margin: 10px;
 }
 
@@ -248,7 +227,7 @@ body {
     flex-direction: column;
 }
 
-.titulo-sobrenosotros{
+.titulo-sobreNosotros{
     align-items:baseline;
     text-align: center;
     margin-top: 4rem;
@@ -272,6 +251,24 @@ body {
     padding: 20px;
 }
 
+/*    Contactanos    */
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+.contact-card {
+    background: linear-gradient(#18d266c0, #004f1ecc);
+    border: white solid;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
 @media (max-width: 1500px){
     .register a{
         font-size: 1.2rem;
@@ -287,19 +284,30 @@ body {
     .register a{
         font-size: 1rem;
     }
+}
 
-    .cards{
-        display: flex;
-        justify-content: space-around;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
+@media (max-width: 990px){
+    .comp{
+        margin-right: 7rem;
+    }
+}
+
+@media (max-width: 810px){
+    .contact-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 500px){
     .register_page{
         width: 100%;
+    }
+
+    .cartas{
+        display: flex;
+        justify-content:space-evenly;
+        flex-direction: row;
+        margin: 0;
     }
 }
 

@@ -1,0 +1,31 @@
+
+.main{
+    width: 100%;
+    .cartas{
+        display: flex;
+        justify-content:space-evenly;
+        flex-direction: row;
+        .card{
+            background: linear-gradient(#18d266cd, #004f1e82);
+            padding: 2rem;
+            margin: 4rem 10px;
+            width: 25rem !important;
+            .card-text{
+                text-align: center;
+                color: white;
+            }
+            .text_decoration{
+                text-decoration: none;
+                color: black;
+            }
+            .titulo{
+                display: flex;
+                justify-content: center;
+                color: white;
+            }
+            .card:hover{
+                background: linear-gradient(#01ad49, #004f1e);
+            }
+        }
+    }
+}

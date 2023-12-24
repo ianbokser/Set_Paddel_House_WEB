@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    padding: 3rem;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(#18d266, #004f1e);
+    .instagram {
+        width: 40px;
+    }
+    
+    .twitter {
+        width: 40px;
+        border-radius: 10px;
+    }   
+    
+    .comp{
+        margin-right: 15rem;
+    }
+    
+    .compaña{
+        text-decoration: none;
+        list-style: none;
+        color: black;
+    }
+}
