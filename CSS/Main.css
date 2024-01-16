@@ -1,5 +1,19 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+.text_decoration {
+  text-decoration: none;
+  color: black;
+}
+
+.instagram {
+  width: 40px;
+}
+
+.twitter {
+  width: 40px;
+  border-radius: 10px;
+}
+
 body {
   background-image: url("../IMAGES/cancha2.jpg");
   background-position: 0;
@@ -11,7 +25,7 @@ body {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1;
+  z-index: 2;
 }
 .comunication .img-whatsapp {
   width: 5rem;
@@ -38,13 +52,6 @@ body {
   width: 100%;
   background: linear-gradient(#18d266, #004f1e);
 }
-.footer .instagram {
-  width: 40px;
-}
-.footer .twitter {
-  width: 40px;
-  border-radius: 10px;
-}
 .footer .comp {
   margin-right: 15rem;
 }
@@ -56,7 +63,7 @@ body {
 
 .header {
   display: flex;
-  background: linear-gradient(#18d266, #004f1e);
+  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   justify-content: space-between;
   width: 100%;
 }
@@ -74,7 +81,6 @@ body {
 }
 .header .nav .hover:hover {
   color: white;
-  letter-spacing: 2px;
 }
 .header .nav .flex {
   display: flex !important;
@@ -107,7 +113,7 @@ body {
   width: 50%;
 }
 .Sing_Up .register_page .register_page div {
-  margin: 10px;
+  margin: 3rem;
 }
 .Sing_Up .register_page .Registrarse {
   font-size: 50px;
@@ -140,6 +146,7 @@ body {
   display: flex;
   justify-content: center;
   height: 40px;
+  margin: 20px;
 }
 .Sing_Up .register_page .button .boton_registrarse {
   background-color: rgb(0, 255, 76);
@@ -155,7 +162,6 @@ body {
   font-size: 1.5rem;
 }
 .Sing_Up .register_page .ya_tiene_cuenta .ya_tiene_cuenta p a {
-  text-decoration: none;
   color: rgb(0, 255, 76);
 }
 
@@ -168,26 +174,69 @@ body {
   flex-direction: row;
 }
 .main .cartas .card {
-  background: linear-gradient(rgba(24, 210, 102, 0.8039215686), rgba(0, 79, 30, 0.5098039216));
+  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   padding: 2rem;
-  margin: 4rem 10px;
+  margin: 6rem 10px;
   width: 25rem !important;
 }
 .main .cartas .card .card-text {
   text-align: center;
   color: white;
 }
-.main .cartas .card .text_decoration {
-  text-decoration: none;
-  color: black;
-}
 .main .cartas .card .titulo {
   display: flex;
   justify-content: center;
   color: white;
 }
-.main .cartas .card .card:hover {
-  background: linear-gradient(#01ad49, #004f1e);
+.main .cartas .card::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  bottom: 95%;
+  left: 80%;
+  z-index: 1;
+  background: url("https://cdn.pixabay.com/photo/2012/04/18/15/36/tennis-ball-37359_960_720.png") no-repeat;
+  background-size: contain;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+}
+.main .cartas .card:hover {
+  background: linear-gradient(#15c05c, #036027);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: right;
+  max-width: 100%;
+  font-family: "DM Sans";
+}
+
+.main-nosotros {
+  display: flex;
+  flex-direction: column;
+}
+.main-nosotros .titulo-sobreNosotros {
+  align-items: baseline;
+  text-align: center;
+  margin-top: 4rem;
+}
+.main-nosotros .grid-cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 0.7fr);
+  margin: 0 0 10rem 0;
+  grid-gap: 30px;
+}
+.main-nosotros .grid-cards .grid-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
+  border: white solid;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 @media (max-width: 1500px) {
@@ -225,37 +274,11 @@ body {
     margin: 0;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  justify-content: right;
-  max-width: 100%;
-  font-family: "DM Sans";
-}
-
-.main-nosotros {
-  display: flex;
-  flex-direction: column;
-}
-.main-nosotros .titulo-sobreNosotros {
-  align-items: baseline;
-  text-align: center;
-  margin-top: 4rem;
-}
-.main-nosotros .grid-cards {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(1, 0.7fr);
-  margin: 0 0 10rem 0;
-  grid-gap: 30px;
-}
-.main-nosotros .grid-cards .grid-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
-  border: white solid;
-  border-radius: 10px;
-  padding: 20px;
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }/*# sourceMappingURL=Main.css.map */

@@ -1,0 +1,17 @@
+$base-color: (#18d266c0, #004f1ecc); 
+$base-color-darker: (#15c05c, #036027);
+$text_decoration: text_decoration;
+.text_decoration{
+    text-decoration: none;
+    color: black;
+}
+$instagram: instagram;
+.instagram {
+    width: 40px;
+};
+
+$twitter: twitter;
+.twitter {
+    width: 40px;
+    border-radius: 10px;
+};

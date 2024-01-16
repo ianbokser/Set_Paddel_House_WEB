@@ -6,26 +6,36 @@
         justify-content:space-evenly;
         flex-direction: row;
         .card{
-            background: linear-gradient(#18d266cd, #004f1e82);
+            background: linear-gradient($base-color);
             padding: 2rem;
-            margin: 4rem 10px;
+            margin: 6rem 10px;
             width: 25rem !important;
             .card-text{
                 text-align: center;
                 color: white;
-            }
-            .text_decoration{
-                text-decoration: none;
-                color: black;
             }
             .titulo{
                 display: flex;
                 justify-content: center;
                 color: white;
             }
-            .card:hover{
-                background: linear-gradient(#01ad49, #004f1e);
-            }
+        }
+        .card::after{
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 50px;
+            bottom: 95%;
+            left: 80%;
+            z-index: 1;
+            background: url("https://cdn.pixabay.com/photo/2012/04/18/15/36/tennis-ball-37359_960_720.png") no-repeat;
+            background-size: contain;
+            -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+            animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+        }
+        $text_decoration: text_decoration;
+        .card:hover{
+            background: linear-gradient($base-color-darker);
         }
     }
 }
