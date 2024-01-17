@@ -1,5 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
 .text_decoration {
   text-decoration: none;
   color: black;
@@ -14,51 +22,20 @@
   border-radius: 10px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: right;
+  max-width: 100%;
+  font-family: "DM Sans";
+}
+
 body {
   background-image: url("../IMAGES/cancha2.jpg");
   background-position: 0;
   background-repeat: inherit;
   background-size: 100%;
-}
-
-.comunication .whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 2;
-}
-.comunication .img-whatsapp {
-  width: 5rem;
-}
-
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 20px;
-  margin: 20px;
-}
-.contact-cards .contact-card {
-  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
-  border: white solid;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.footer {
-  display: flex;
-  padding: 3rem;
-  justify-content: space-between;
-  width: 100%;
-  background: linear-gradient(#18d266, #004f1e);
-}
-.footer .comp {
-  margin-right: 15rem;
-}
-.footer .compaña {
-  text-decoration: none;
-  list-style: none;
-  color: black;
 }
 
 .header {
@@ -96,6 +73,71 @@ body {
   margin: 9px;
 }
 
+.main {
+  width: 100%;
+}
+.main .cartas {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.main .cartas .card {
+  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
+  padding: 2rem;
+  margin: 6rem 10px;
+  width: 25rem !important;
+}
+.main .cartas .card .card-text {
+  text-align: center;
+  color: white;
+}
+.main .cartas .card .titulo {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.main .cartas .card::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  bottom: 95%;
+  left: 80%;
+  z-index: 1;
+  background: url("https://cdn.pixabay.com/photo/2012/04/18/15/36/tennis-ball-37359_960_720.png") no-repeat;
+  background-size: contain;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+}
+.main .cartas .card:hover {
+  background: linear-gradient(#15c05c, #036027);
+}
+
+.comunication .whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+}
+.comunication .img-whatsapp {
+  width: 5rem;
+}
+
+.footer {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(#18d266, #004f1e);
+}
+.footer .comp {
+  margin-right: 15rem;
+}
+.footer .compaña {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
 .Sing_Up {
   min-height: 100vh;
   display: flex;
@@ -110,7 +152,12 @@ body {
   border: 1px solid white;
   background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   padding: 1.5rem;
-  width: 50%;
+  width: 70%;
+}
+@media (max-width: 810px) {
+  .Sing_Up .register_page {
+    width: 90%;
+  }
 }
 .Sing_Up .register_page .register_page div {
   margin: 3rem;
@@ -165,54 +212,6 @@ body {
   color: rgb(0, 255, 76);
 }
 
-.main {
-  width: 100%;
-}
-.main .cartas {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-.main .cartas .card {
-  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
-  padding: 2rem;
-  margin: 6rem 10px;
-  width: 25rem !important;
-}
-.main .cartas .card .card-text {
-  text-align: center;
-  color: white;
-}
-.main .cartas .card .titulo {
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-.main .cartas .card::after {
-  position: absolute;
-  content: "";
-  width: 50px;
-  height: 50px;
-  bottom: 95%;
-  left: 80%;
-  z-index: 1;
-  background: url("https://cdn.pixabay.com/photo/2012/04/18/15/36/tennis-ball-37359_960_720.png") no-repeat;
-  background-size: contain;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
-}
-.main .cartas .card:hover {
-  background: linear-gradient(#15c05c, #036027);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  justify-content: right;
-  max-width: 100%;
-  font-family: "DM Sans";
-}
-
 .main-nosotros {
   display: flex;
   flex-direction: column;
@@ -237,6 +236,20 @@ body {
   border: white solid;
   border-radius: 10px;
   padding: 20px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+.contact-cards .contact-card {
+  background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
+  border: white solid;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 @media (max-width: 1500px) {
@@ -265,20 +278,12 @@ body {
 }
 @media (max-width: 500px) {
   .register_page {
-    width: 100%;
+    width: 100vh;
   }
   .cartas {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     margin: 0;
-  }
-}
-@keyframes slide-top {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100px);
   }
 }/*# sourceMappingURL=Main.css.map */

@@ -11,7 +11,10 @@
         border: 1px solid white;
         background: linear-gradient(#18d266c0, #004f1ecc);
         padding: 1.5rem;
-        width: 50%;
+        width: 70%;
+        @media (max-width: 810px){
+            width: 90%;
+        }
         .register_page div{
             margin: 3rem;
         }
