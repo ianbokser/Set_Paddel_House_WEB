@@ -11,9 +11,18 @@
         border: 1px solid white;
         background: linear-gradient(#18d266c0, #004f1ecc);
         padding: 1.5rem;
-        width: 70%;
+        width: 50%;
+        height: 30rem;
         @media (max-width: 810px){
             width: 90%;
+        }
+        .sr-only{
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
         }
         .register_page div{
             margin: 3rem;
@@ -40,8 +49,20 @@
             color: black;
         }
 
+        .error{
+            color: rgb(255, 20, 20);
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .escondido{
+            display: none;
+        }        
+
         .forgot_password{
             display: flex;
+            cursor: pointer;
             .olvidaste_contraseña{
                 justify-content: end;
             }

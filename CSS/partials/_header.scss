@@ -11,29 +11,52 @@
         .margin{
             margin: 0 150px;
         }
+        .container-fluid{
+            margin: 0;
+        }
+        .navbar-brand{
+            font-size: 1.4rem;
+        }
+        
+        .hover:hover {
+            color: white;
+        }
 
-    .navbar-brand{
-        font-size: 1.4rem;
-    }
-    
-    .hover:hover {
-        color: white;
-    }
+        .flex{
+            display: flex !important;
+            justify-content:space-around !important;
+        }
 
-    .flex{
-        display: flex !important;
-        justify-content:space-around !important;
-    }
+        .user_class{
+            margin: 40px 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .user{
+                margin: 0;
+                font-size: 1.5rem;
+            }
+            .view_profile{
+                color: black;
+                margin-bottom: 2rem;
+            }
+            .cerrarsesion{
+                background-color: transparent;
+                border: none;
 
-    .register{
-        margin: 50px;
-    }
+            }
+        }
 
-    .register a{
-        text-decoration: none;
-        color: black;
-        font-size: 1.4rem !important;
-        margin: 9px;
-    }
+        .register{
+            margin: 50px;
+        }
+
+        .register a{
+            text-decoration: none;
+            color: black;
+            font-size: 1.4rem !important;
+            margin: 9px;
+        }
     }
 }
