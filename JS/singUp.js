@@ -1,4 +1,6 @@
 const mensajeEroor = document.getElementsByClassName("error")[0];
+var verPassword = document.querySelector('.ver_password');
+var password = document.getElementById('password');
 
 document.getElementById("register-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -22,4 +24,15 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     if (resJson.redirect) {
         window.location.href = resJson.redirect;
     }  
+});
+
+verPassword.addEventListener("click", () => {
+    if (password.type === "password"){
+        password.type = "text";
+        verPassword.src = "../IMAGES/eye-fill.svg";
+    }
+    else{
+        password.type = "password";
+        verPassword.src = "../IMAGES/eye-slash-fill.svg";
+    }
 });

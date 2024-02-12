@@ -199,7 +199,7 @@ body {
   text-align: center;
 }
 .Sing_Up .register_page .inputs_register {
-  width: 100%;
+  width: 97%;
   height: 45px;
   background: transparent;
   border: none;
@@ -214,6 +214,24 @@ body {
 }
 .Sing_Up .register_page .inputs_register::placeholder {
   color: black;
+}
+.Sing_Up .register_page .ver_password_div {
+  display: flex;
+  align-items: center;
+}
+.Sing_Up .register_page .inputs_register {
+  flex: 1;
+  padding-right: 30px;
+}
+.Sing_Up .register_page .ver_password_div::after {
+  content: "";
+  background-image: url("../IMAGES/eye-slash-fill.svg") no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
 .Sing_Up .register_page .error {
   color: rgb(255, 20, 20);

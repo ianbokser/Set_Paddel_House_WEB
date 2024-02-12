@@ -33,7 +33,7 @@
         }
 
         .inputs_register{
-            width: 100%;
+            width: 97%;
             height: 45px;
             background: transparent;
             border: none;
@@ -47,6 +47,27 @@
         
         .inputs_register::placeholder{
             color: black;
+        }
+
+        .ver_password_div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .inputs_register {
+            flex: 1;
+            padding-right: 30px;
+        }
+        
+        .ver_password_div::after {
+            content: "";
+            background-image: url("../IMAGES/eye-slash-fill.svg") no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
         }
 
         .error{

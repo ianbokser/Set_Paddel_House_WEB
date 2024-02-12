@@ -55,7 +55,7 @@ export function userName(registerDiv, usuario){
     cerrarsesion.onclick = function(){
         localStorage.removeItem("jwt");
         localStorage.removeItem("expiracion");
-        window.location.href = './index.html';
+        window.location.href = '../index.html';
     }
     cerrarsesion.textContent = 'Cerrar Sesión';
     const links = registerDiv.querySelectorAll('a');
