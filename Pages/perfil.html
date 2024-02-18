@@ -4,16 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" href="../IMAGES/set_padel (sin_fondo).png">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/Main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@1,100;1,700&family=Roboto:wght@700&family=Vina+Sans&display=swap" rel="stylesheet">
+    <script type="module" src="../js/perfil.js" defer></script>
 </head>
 <body>
-    <header>
-
+    <div class="comunication">
+        <a class="whatsapp" href="" title="Contacto por WhatsApp"><img class="img-whatsapp" src="../IMAGES\whatsapp.png" alt="Ícono de WhatsApp"></a>
+    </div>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
+            <div class="container-fluid">
+                <a href="./index.html" title="Ir a la página de inicio"><img class="navbar-brand img_logo" src="../IMAGES/set_padel (sin_fondo).png" alt="Logo de Set Padel House"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="navbar-brand nav-link hover" aria-current="page" href="../index.html" title="Ir a la página de inicio">INICIO</a>
+                        <a class="navbar-brand nav-link hover" href="./alquilar.html" title="Ir a la página de alquiler">ALQUILAR</a>
+                        <a class="navbar-brand nav-link hover" href="./Sobre_Nosotros.html" title="Ir a la página sobre nosotros">SOBRE NOSOTROS</a>
+                        <a class="navbar-brand disabled hover" aria-disabled="true" href="./contactanos.html" title="Ir a la página de contacto">CONTACTANOS</a>
+                    </div>
+                    <div class="register flex">
+                        <a href="./logIn.html" title="Iniciar sesión">Iniciar Sesión</a>
+                        <a href="./singUp.html" title="Registrarse">Registrarse</a>
+                    </div>  
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-
+        <section>
+            <h1>Perfil</h1>
+            <div id="qr" class="qr">
+            </div>
+            <div>
+                <h2>Nombre</h2>
+                <p>Nombre de usuario</p>
+            </div>
+            <div>
+                <h2>Correo</h2>
+                <p>Correo de usuario</p>
+            </div>
+            <div>
+                <h2>Contraseña</h2>
+                <p>Contraseña de usuario</p>
+            </div>
+            <div>
+                <h2>Fecha de nacimiento</h2>
+                <p>Fecha de nacimiento de usuario</p>
+            </div>
+            <div>
+                <h2>Telefono</h2>
+                <p>Telefono de usuario</p>
+            </div>
+            <div>
+                <h2>Reservas</h2>
+                <p>Reservas de usuario</p>
+            </div>
+        </section>
     </main>
-    <footer>
-        
+    <footer class="footer">
+        <div class="imglogo">
+            <a href="../index.html" title="Ir a la página de inicio"><img src="../IMAGES/set_padel (sin_fondo).png" alt="Logo de Set Padel House"></a>
+        </div>
+        <div class="redes_sociales">
+            <div class="redes_sociales">
+                <h3><b>Redes sociales</b></h3>
+                <a href="https://www.instagram.com/set.padelhouse/" target="_blank" title="Instagram"><img class="instagram" src="../IMAGES/Instagaram.png" alt="Instagram"></a>
+                <a href="" title="Twitter"><img class="twitter"  src="../IMAGES/twitter.jpeg" alt="Twitter"></a>
+                <a href=""></a>
+            </div>
+        </div>
+        <div>
+            <div class="comp">
+                <h3><b>Compaña</b></h3>
+            </div>
+            <div>
+                <ul>
+                    <a class="compaña" href="./Sobre_Nosotros.html" title="Ir a la página sobre nosotros"><li>Nosotros</li></a>
+                    <li class="compaña" title="Ir a la página de servicios">Nuestros Servicios</li>
+                    <li class="compaña" title="Ir a la página de políticas de privacidad">Políticas De Privacidad</li>
+                </ul>
+            </div>
+        </div>
     </footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </html>

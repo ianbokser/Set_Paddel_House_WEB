@@ -37,6 +37,7 @@ body {
   background-repeat: inherit;
   background-size: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .header {
@@ -80,7 +81,9 @@ body {
 }
 .header .nav .user_class .view_profile {
   color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .header .nav .user_class .cerrarsesion {
   background-color: transparent;
@@ -96,30 +99,33 @@ body {
   margin: 9px;
 }
 
-.main {
+.body_index {
   width: 100%;
 }
-.main .cartas {
+.body_index .main {
+  width: 100%;
+}
+.body_index .main .cartas {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
 }
-.main .cartas .card {
+.body_index .main .cartas .card {
   background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   padding: 2rem;
   margin: 6rem 10px;
   width: 25rem !important;
 }
-.main .cartas .card .card-text {
+.body_index .main .cartas .card .card-text {
   text-align: center;
   color: white;
 }
-.main .cartas .card .titulo {
+.body_index .main .cartas .card .titulo {
   display: flex;
   justify-content: center;
   color: white;
 }
-.main .cartas .card::after {
+.body_index .main .cartas .card::after {
   position: absolute;
   content: "";
   width: 50px;
@@ -131,7 +137,7 @@ body {
   background-size: contain;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
 }
-.main .cartas .card:hover {
+.body_index .main .cartas .card:hover {
   background: linear-gradient(#15c05c, #036027);
 }
 
@@ -151,6 +157,7 @@ body {
   justify-content: space-between;
   width: 100%;
   background: linear-gradient(#18d266, #004f1e);
+  overflow: hidden;
 }
 .footer .comp {
   margin-right: 15rem;
@@ -176,7 +183,6 @@ body {
   background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   padding: 1.5rem;
   width: 50%;
-  height: 30rem;
 }
 @media (max-width: 810px) {
   .Sing_Up .register_page {
@@ -239,9 +245,6 @@ body {
   justify-content: center;
   font-weight: bold;
 }
-.Sing_Up .register_page .escondido {
-  display: none;
-}
 .Sing_Up .register_page .forgot_password {
   display: flex;
   cursor: pointer;
@@ -263,6 +266,55 @@ body {
   font-weight: bold;
   font-size: 20px;
 }
+.Sing_Up .register_page .button .loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  animation: rotate 1s linear infinite;
+}
+.Sing_Up .register_page .button .loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid black;
+  animation: prixClipFix 2s linear infinite;
+}
+.Sing_Up .register_page .button .alquiler_exitoso {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(0, 255, 76);
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes prixClipFix {
+  0% {
+    -webkit-clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+            clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
 .Sing_Up .register_page .ya_tiene_cuenta {
   display: flex;
   justify-content: center;
@@ -270,6 +322,14 @@ body {
 }
 .Sing_Up .register_page .ya_tiene_cuenta .ya_tiene_cuenta p a {
   color: rgb(0, 255, 76);
+}
+.Sing_Up .register_page .qrcode {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto;
 }
 
 .main-nosotros {
@@ -357,4 +417,7 @@ body {
     flex-direction: row;
     margin: 0;
   }
+}
+.escondido {
+  display: none !important;
 }/*# sourceMappingURL=Main.css.map */

@@ -6,6 +6,7 @@
     <meta name="keywords" content="Alquiler, Reserva, Reservar pista, Tarifas, Disponibilidad, Horarios, Pago en línea, Confirmación, Calendario de reservas, Alquiler por horas, Selección de canchas, Reserva anticipada, Confirmar reserva, Pistas disponibles, Precios de alquiler, Proceso de alquiler, Disfruta del juego, Reservación en línea, Opciones de reserva, Ofertas de alquiler, Reserva fácil, Experiencia de alquiler">
     <meta name="description" content="Reserva tu pista de pádel en línea. Descubre tarifas flexibles, horarios convenientes y una experiencia de alquiler fácil. ¡Disfruta del juego con nosotros!">
     <title>Alquilar</title>
+    <link rel="icon" href="../IMAGES/set_padel (sin_fondo).png">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/Main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,20 +44,21 @@
             <div>
                 <h2 class="Registrarse">Alquila Aquí</h2>
             </div>
-            <div class="inputs">
-                <div>
-                    <input class="inputs_register" type="date" title="Seleccionar fecha de alquiler">
+            <form id="alquilar_form">
+                <div class="inputs">
+                    <div>
+                        <label for="date" class="sr-only">date</label>
+                        <input class="inputs_register" type="datetime-local" name="date" id="date" title="Seleccionar fecha de alquiler">
+                    </div>
                 </div>
-            </div>
-            <div class="button">
-                <button class="boton_registrarse" type="submit" title="Enviar solicitud de alquiler">alquilar</button>
-            </div>
-            <div class="ya_tiene_cuenta">
-                <p>No tienes cuenta? <a class="text_decoration" href="./singUp.html" title="Ir a la página de registro">Registrarse</a></p>
-            </div>
-            <div class="ya_tiene_cuenta">
-                <p>Ya tienes cuenta? <a class="text_decoration" href="./logIn" title="Iniciar sesión">Inicia Sesión</a></p>
-            </div>
+                <p class="error escondido">Inicia Sesión antes de alquilar</p>
+                <div class="button">
+                    <button class="boton_registrarse" type="submit" title="Enviar solicitud de alquiler">alquilar</button>
+                    <span id="loader_login" class="loader escondido"></span>
+                    <p class="alquiler_exitoso escondido" id="alquiler_exitoso">alquiler exitoso</p>
+                </div>
+            </form>
+            <div id="qrcode" class="escondido qrcode"></div>
         </section>
     </main>
     <footer class="footer">
@@ -85,6 +87,10 @@
         </div>
     </footer>
     <script src="../JS/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('gN3jQzW3W1jrvMUft')</script>
     <script type="module" src="../js/alquilar.js"></script>
 </body>
 </html>

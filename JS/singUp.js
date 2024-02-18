@@ -1,9 +1,13 @@
 const mensajeEroor = document.getElementsByClassName("error")[0];
 var verPassword = document.querySelector('.ver_password');
 var password = document.getElementById('password');
+const loader_login = document.getElementById('loader_login');
+const botonIniciarSesion = document.querySelector('.boton_registrarse');
 
 document.getElementById("register-form").addEventListener("submit", async (e) => {
     e.preventDefault();
+    loader_login.classList.toggle("escondido",false);
+    botonIniciarSesion.textContent = '';
     const formData = new FormData(e.target);
     const user = formData.get("user");
     const email = formData.get("email");

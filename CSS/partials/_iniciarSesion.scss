@@ -12,7 +12,6 @@
         background: linear-gradient(#18d266c0, #004f1ecc);
         padding: 1.5rem;
         width: 50%;
-        height: 30rem;
         @media (max-width: 810px){
             width: 90%;
         }
@@ -75,11 +74,7 @@
             display: flex;
             justify-content: center;
             font-weight: bold;
-        }
-        
-        .escondido{
-            display: none;
-        }        
+        }     
 
         .forgot_password{
             display: flex;
@@ -101,6 +96,41 @@
                 border: 2px solid black;
                 font-weight: bold;
                 font-size: 20px;
+            }
+            .loader {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                position: absolute;
+                animation: rotate 1s linear infinite
+            }
+            .loader::before {
+                content: "";
+                box-sizing: border-box;
+                position: absolute;
+                inset: 0px;
+                border-radius: 50%;
+                border: 5px solid black;
+                animation: prixClipFix 2s linear infinite ;
+            }
+
+            .alquiler_exitoso{
+                display: flex;
+                justify-content: center;
+                font-size: 1.5rem;
+                color: rgb(0, 255, 76);
+            }
+
+            @keyframes rotate {
+                100%   {transform: rotate(360deg)}
+            }
+
+            @keyframes prixClipFix {
+                    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+                    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+                    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+                    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+                    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
             }            
         }
         .ya_tiene_cuenta{
@@ -111,6 +141,15 @@
                 $text_decoration: text_decoration;
                 color: rgb(0, 255, 76);
             }
+        }
+        .qrcode{
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 5px;
+            // width: fit-content;
+            margin: 0 auto;
         }
     }
 }

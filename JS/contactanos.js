@@ -5,11 +5,14 @@ const registerDiv = document.querySelector('.register');
 import { tokenData, tokenExpired,userName } from "./functions.js";
 
 const tokenExpiredResults = tokenExpired(tokenRecuperado,fechaExpiracionRecuperada);
+
 if (tokenExpiredResults){
     const tokenDataResult = await tokenData();
     if (tokenDataResult.ok){
-        const usuario = tokenDataResult.user;
-        userName(registerDiv, usuario);
+        console.log(tokenDataResult);
+        const usuario = tokenDataResult.token.name;
+        const index = false;
+        userName(registerDiv, usuario, index);
     }
 }   
 

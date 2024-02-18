@@ -125,3 +125,34 @@ export async function verificarUsuarioYContraseña(_host, _user, _password, _dat
         });
     });
 }
+
+export async function cargarAlquiler(_host, _user, _password, _database, id_cliente, fecha_alquiler) {
+    const connection = mysql.createConnection({
+        host: _host,
+        user: _user,
+        password: _password,
+        database: _database,
+    });
+
+    return new Promise((resolve, reject) => {
+        connection.connect((err) => {
+            if (err) {
+                console.error('Error al conectar a la base de datos:', err);
+                reject(err);
+                return;
+            }
+
+            const query = 'INSERT INTO alquiler (id_cliente, fecha_del_alquiler) VALUES (?, ?)';
+            
+            connection.query(query, [id_cliente, fecha_alquiler], (error, results) => {
+                if (error) {
+                    console.error('Error al ejecutar la consulta:', error);
+                    reject(error);
+                    return;
+                }
+                resolve(results);
+                connection.end();
+            });
+        });
+    });
+}
