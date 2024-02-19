@@ -115,3 +115,57 @@ export async function description(){
     const resJson = await res.json();
     return resJson;
 };
+
+export function perfilUser(descripcion, tel_perfil, nacimiento_perfil, descripcion_perfil, posicion_perfil){
+    if (descripcion.nacimiento_cliente === "0000-00-00"){
+        nacimiento_perfil.textContent = "No especificado";
+    }
+    else{
+        nacimiento_perfil.textContent = descripcion.nacimiento_cliente;
+    }
+    if (descripcion.descripcion === ""){
+        descripcion_perfil.textContent = "No especificado";
+    }
+    else{
+        descripcion_perfil.textContent = descripcion.descripcion;
+    }
+    if (descripcion.posicion === "drive"){
+        posicion_perfil.textContent = "Drive";
+    }
+    if (descripcion.posicion === "reves"){
+        posicion_perfil.textContent = "Revés";
+    }
+    if (descripcion.tel_cliente === 0){
+        console.log("No especificado nashei");
+        tel_perfil.textContent = "No especificado";
+    }
+    else{
+        tel_perfil.textContent = descripcion.tel_cliente;
+    }
+}
+
+export function noLogued(registerPageSection){
+    registerPageSection.innerHTML = '';
+    registerPageSection.innerHTML = '';
+    var sectionNoLogued = document.createElement('section');
+    sectionNoLogued.classList.add('section_no_logued');
+    var noLoguedDiv = document.createElement('div');
+    noLoguedDiv.classList.add('no_logued');
+    var messageParagraph = document.createElement('p');
+    messageParagraph.classList.add('no_logued_p');
+    messageParagraph.textContent = 'No estás logueado';
+    noLoguedDiv.appendChild(messageParagraph);
+    var redirectNoLoguedDiv = document.createElement('div');
+    redirectNoLoguedDiv.classList.add('redirect_no_logued');
+    var loginLink = document.createElement('a');
+    loginLink.href = './logIn.html';
+    loginLink.textContent = 'Iniciar Sesión';
+    var registerLink = document.createElement('a');
+    registerLink.href = './singUp.html';
+    registerLink.textContent = 'Registrarse';
+    redirectNoLoguedDiv.appendChild(loginLink);
+    redirectNoLoguedDiv.appendChild(registerLink);
+    sectionNoLogued.appendChild(noLoguedDiv);
+    sectionNoLogued.appendChild(redirectNoLoguedDiv);
+    registerPageSection.appendChild(sectionNoLogued);
+}

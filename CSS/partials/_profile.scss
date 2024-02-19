@@ -1,9 +1,40 @@
 .margin_perfil{
     margin: 2rem 0;
-    .nom_perfil{
+
+    .top_perfil{
         display: flex;
-        justify-content: start;
         align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        .nom_perfil{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        .editar_perfil{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .editar_perfil_h2{
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: black;
+            margin: 0;
+
+        }
+
+        .editar_perfil_img{
+            width: 30px;
+            height: 30px;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        .editar_perfil_img:hover{
+            transform: scale(1.1);
+        }
     }
 
     .img_perfil{
@@ -26,19 +57,66 @@
         display: inline-block;
     }
     
-    .subrayado::after {
-        content: '';
-        background-image: url('../IMAGES/aditar.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: -30px;
-        top: 50%;
-        transform: translateY(-50%);
+    .nombre_perfil{
+        font-size: 2rem;
+        font-weight: 400;
+        color: black;
     }
 
-    .contraseña_perfil{
+    .form_perfil {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: start;
+        margin: 10px 0;
+        .input_posicion_perfil {
+            display: none;
+        }
+
+        .posicion_perfil {
+            display: inline-block;
+            width: 5rem;
+            margin-right: 10px;
+            padding: 7px 7px;
+            background-color: $base-color;
+            color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .posicion_perfil:hover {
+            background-color: #e0e0e0;
+            color: black;
+        }
+
+        .input_posicion_perfil:checked + .posicion_perfil {
+            background-color: black;
+            color: #fff;
+        }
+    }
+}
+
+.section_no_logued{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .no_logued{
+        font-size: 2rem;
+        font-weight: 400;
+        color: red;
+    }
+    .redirect_no_logued > a{
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: black;
+        margin-right: 1rem;
+        text-decoration: none;
+    }
+
+    .redirect_no_logued > a:hover{
+        text-decoration: underline;
     }
 }

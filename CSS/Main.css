@@ -98,6 +98,9 @@ body {
   font-size: 1.4rem !important;
   margin: 9px;
 }
+.header .nav .register a:hover {
+  text-decoration: underline;
+}
 
 .body_index {
   width: 100%;
@@ -425,10 +428,36 @@ body {
 .margin_perfil {
   margin: 2rem 0;
 }
-.margin_perfil .nom_perfil {
+.margin_perfil .top_perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.margin_perfil .top_perfil .nom_perfil {
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.margin_perfil .top_perfil .editar_perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.margin_perfil .top_perfil .editar_perfil_h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+.margin_perfil .top_perfil .editar_perfil_img {
+  width: 30px;
+  height: 30px;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.margin_perfil .top_perfil .editar_perfil_img:hover {
+  transform: scale(1.1);
 }
 .margin_perfil .img_perfil {
   width: 100px;
@@ -447,15 +476,60 @@ body {
   position: relative;
   display: inline-block;
 }
-.margin_perfil .subrayado::after {
-  content: "";
-  background-image: url("../IMAGES/aditar.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
+.margin_perfil .nombre_perfil {
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+}
+.margin_perfil .form_perfil {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  margin: 10px 0;
+}
+.margin_perfil .form_perfil .input_posicion_perfil {
+  display: none;
+}
+.margin_perfil .form_perfil .posicion_perfil {
+  display: inline-block;
+  width: 5rem;
+  margin-right: 10px;
+  padding: 7px 7px;
+  background-color: rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8);
+  color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.margin_perfil .form_perfil .posicion_perfil:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
+.margin_perfil .form_perfil .input_posicion_perfil:checked + .posicion_perfil {
+  background-color: black;
+  color: #fff;
+}
+
+.section_no_logued {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section_no_logued .no_logued {
+  font-size: 2rem;
+  font-weight: 400;
+  color: red;
+}
+.section_no_logued .redirect_no_logued > a {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: black;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+.section_no_logued .redirect_no_logued > a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=Main.css.map */

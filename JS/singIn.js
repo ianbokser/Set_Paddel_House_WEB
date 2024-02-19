@@ -24,14 +24,18 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
             password: password,
         })
     }); 
-    if (!res.ok) return mensajeEroor.classList.toggle("escondido",false);
+    if (!res.ok) {
+        mensajeEroor.classList.toggle("escondido",false);
+        loader_login.classList.toggle("escondido",true);
+        botonIniciarSesion.textContent = 'Inicia Sesión';
+    }
     const resJson = await res.json();
     if (resJson.redirect) {
         console.log(resJson);
         const nombre = "jwt";
         crateToken(resJson.token,  nombre);
         window.location.href = resJson.redirect;
-    }  
+    }
 });
 
 verPassword.addEventListener("click", () => {

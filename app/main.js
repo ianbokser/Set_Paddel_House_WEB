@@ -22,12 +22,9 @@ app.listen(port, () => {
 });
 
 app.post("/api/user", authentication.isUser, giveuser.user);
-app.post("/api/user_description", giveuser.user_description);
+app.post("/api/user_description", authentication.isUser, giveuser.user_description);
 app.post("/api/register", registration.register);
 app.post("/api/login", registration.login);
 app.post("/api/alquilar", authentication.isUser, alquilar.cargarAlquileres);
-app.post("/api/profile", authentication.isUser, (req, res) => {
-    res.redirect('./pages/perfil.html');
-});
 
 // app.post("/api/matchmaking", authentication.isUser, );

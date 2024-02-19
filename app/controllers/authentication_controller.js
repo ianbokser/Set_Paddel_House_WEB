@@ -29,7 +29,9 @@ async  function login(req, res){
             mail: usuarioAResvisar.mail_cliente,
             descripcion: usuarioAResvisar.descripcion_cliente,
             posicion: usuarioAResvisar.posicion_cliente,
-            nivel: usuarioAResvisar.nivel_cliente
+            nivel: usuarioAResvisar.nivel_cliente,
+            tel1_cliente: usuarioAResvisar.tel1_cliente,
+            nacimiento_cliente: usuarioAResvisar.nacimiento_cliente,
         }, process.env.JWT_SECRET);
         res.send({ token: tokenSession, redirect: "../index.html" });
     }
