@@ -6,7 +6,7 @@ export function crateToken(token, nombre){
     if (nombre !== "alquiler"){
         localStorage.setItem("expiracion", fechaExpiracion.getTime().toString());
     }
-}
+};
 
 export function tokenExpired(tokenRecuperado,fechaExpiracionRecuperada){
     if (tokenRecuperado && fechaExpiracionRecuperada) {
@@ -22,7 +22,7 @@ export function tokenExpired(tokenRecuperado,fechaExpiracionRecuperada){
     } else {
         return false;
     }
-}
+};
 
 export async function tokenData(){
     var jwt = localStorage.getItem('jwt');
@@ -37,7 +37,7 @@ export async function tokenData(){
     });
     const resJson = await res.json();
     return resJson;
-}
+};
 
 export function userName(registerDiv, usuario, index){
     const userNameParagraph = document.createElement('p');
@@ -72,7 +72,7 @@ export function userName(registerDiv, usuario, index){
     registerDiv.appendChild(userNameParagraph);
     registerDiv.appendChild(viewProfileLink);
     registerDiv.appendChild(cerrarsesion);
-}
+};
 
 export function alquilarLoguarse(register_page,error){
     const nuevosElementosHTML = `
@@ -85,7 +85,7 @@ export function alquilarLoguarse(register_page,error){
     `;-
 
     register_page.insertAdjacentHTML('beforeend', nuevosElementosHTML);
-}
+};
 
 export function sendEmail(qrImageUrl, date, usuario) {
     var templateParams = {
@@ -93,11 +93,25 @@ export function sendEmail(qrImageUrl, date, usuario) {
         fecha_hora_reserva: date,
         qrImageUrl: qrImageUrl,
     };
-
     emailjs.send("Set_paddle","template_a7p9onv", templateParams)
         .then(function(response) {
             console.log('Correo electrónico enviado correctamente!', response);
         }, function(error) {
             console.error('Error al enviar el correo electrónico:', error);
         });
-}
+};
+
+export async function description(){
+    var jwt = localStorage.getItem('jwt');
+    const res = await fetch("http://localhost:3050/api/user_description",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            token: jwt,
+        })
+    });
+    const resJson = await res.json();
+    return resJson;
+};

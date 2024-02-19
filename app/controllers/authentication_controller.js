@@ -23,9 +23,13 @@ async  function login(req, res){
         return res.status(400).send({status:"Error",message:"Error durante login"})
     }
     else {
+        console.log(usuarioAResvisar);
         const tokenSession = jsonwebtoken.sign({
             name: usuarioAResvisar.usuario_cliente,
-            id_cliente: usuarioAResvisar.id_cliente,
+            mail: usuarioAResvisar.mail_cliente,
+            descripcion: usuarioAResvisar.descripcion_cliente,
+            posicion: usuarioAResvisar.posicion_cliente,
+            nivel: usuarioAResvisar.nivel_cliente
         }, process.env.JWT_SECRET);
         res.send({ token: tokenSession, redirect: "../index.html" });
     }

@@ -22,6 +22,7 @@ app.listen(port, () => {
 });
 
 app.post("/api/user", authentication.isUser, giveuser.user);
+app.post("/api/user_description", giveuser.user_description);
 app.post("/api/register", registration.register);
 app.post("/api/login", registration.login);
 app.post("/api/alquilar", authentication.isUser, alquilar.cargarAlquileres);

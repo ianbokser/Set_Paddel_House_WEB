@@ -10,7 +10,7 @@ if (tokenExpiredResults){
     const tokenDataResult = await tokenData();
     if (tokenDataResult.ok){
         console.log(tokenDataResult);
-        const usuario = tokenDataResult.token.name;
+        const usuario = tokenDataResult.token;
         const index = false;
         userName(registerDiv, usuario, index);
     }

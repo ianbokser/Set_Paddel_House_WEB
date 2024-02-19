@@ -8,7 +8,7 @@ const tokenExpiredResults = tokenExpired(tokenRecuperado,fechaExpiracionRecupera
 if (tokenExpiredResults){
     const tokenDataResult = await tokenData();
     if (tokenDataResult.ok){
-        const usuario = tokenDataResult.token.name;
+        const usuario = tokenDataResult.token;
         const index = false;
         userName(registerDiv, usuario, index);
     }
