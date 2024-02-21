@@ -55,7 +55,7 @@ export function usuarioExiste(_host, _user, _password, _database, usuario, email
     });
 }
 
-export async function agregarNuevoCliente(_host, _user, _password, _database, usuario, email, contraseña) {
+export async function agregarNuevoCliente(_host, _user, _password, _database, usuario, email, contraseña, unique) {
     const connection = mysql.createConnection({
         host: _host,
         user: _user,
@@ -70,8 +70,8 @@ export async function agregarNuevoCliente(_host, _user, _password, _database, us
                 reject(err);
                 return;
             }
-            const query = 'INSERT INTO clientes (usuario_cliente, mail_cliente, password_cliente) VALUES (?, ?, ?)';
-            connection.query(query, [usuario, email, contraseña], (error, results) => {
+            const query = 'INSERT INTO clientes (usuario_cliente, mail_cliente, password_cliente, hash_unico_cliente) VALUES (?, ?, ?, ?)';
+            connection.query(query, [usuario, email, contraseña, unique], (error, results) => {
                 if (error) {
                     console.error('Error al ejecutar la consulta de inserción:', error);
                     reject(error);
@@ -110,8 +110,10 @@ export async function verificarUsuarioYContraseña(_host, _user, _password, _dat
                 if (results.length > 0) {
                     const usuarioEncontrado = results[0];
                     const storedHashedPassword = usuarioEncontrado.password_cliente;
+                    const estadoCliente = usuarioEncontrado.estado_cliente;
                     const contraseñaCoincide = await bcryptjs.compare(password, storedHashedPassword);
-                    if (contraseñaCoincide) {
+                    
+                    if (contraseñaCoincide && estadoCliente === 1) {
                         resolve(usuarioEncontrado);
                     } else {
                         resolve(false);
@@ -125,7 +127,6 @@ export async function verificarUsuarioYContraseña(_host, _user, _password, _dat
         });
     });
 }
-
 export async function cargarAlquiler(_host, _user, _password, _database, id_cliente, fecha_alquiler) {
     const connection = mysql.createConnection({
         host: _host,
@@ -151,6 +152,56 @@ export async function cargarAlquiler(_host, _user, _password, _database, id_clie
                     return;
                 }
                 resolve(results);
+                connection.end();
+            });
+        });
+    });
+}
+
+export async function confirmar_unique(_host, _user, _password, _database, unique, user) {
+    const connection = mysql.createConnection({
+        host: _host,
+        user: _user,
+        password: _password,
+        database: _database,
+    });
+
+    return new Promise((resolve, reject) => {
+        connection.connect((err) => {
+            if (err) {
+                console.error('Error al conectar a la base de datos:', err);
+                reject(err);
+                return;
+            }
+
+            const queryUsuario = 'SELECT * FROM clientes WHERE usuario_cliente = ?';
+
+            connection.query(queryUsuario, [user], async (error, results) => {
+                if (error) {
+                    console.error('Error al ejecutar la consulta de usuario:', error);
+                    reject(error);
+                    return;
+                }
+                if (results.length > 0) {
+                    const usuarioEncontrado = results[0];
+                    const storedUnique = usuarioEncontrado.hash_unico_cliente;
+                    if (storedUnique === unique) {
+                        const updateQuery = 'UPDATE clientes SET estado_cliente = ? WHERE usuario_cliente = ?';
+                        connection.query(updateQuery, [1, user], (updateError, updateResult) => {
+                        if (updateError) {
+                            console.error('Error al actualizar el estado del cliente:', updateError);
+                            reject(updateError);
+                            return;
+                        }
+                        resolve(true);
+                        });
+                    } else {
+                        resolve(false);
+                    }
+                } else {
+                    resolve(false);
+                }
+
                 connection.end();
             });
         });

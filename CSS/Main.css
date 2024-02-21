@@ -248,6 +248,12 @@ body {
   justify-content: center;
   font-weight: bold;
 }
+.Sing_Up .register_page .exito {
+  color: rgb(0, 255, 76);
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 .Sing_Up .register_page .forgot_password {
   display: flex;
   cursor: pointer;

@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import bcryptjs from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 
-import { usuarioExiste, agregarNuevoCliente, verificarUsuarioYContraseña } from '../helpers/functionsDB.js';
+import { usuarioExiste, agregarNuevoCliente, verificarUsuarioYContraseña, confirmar_unique } from '../helpers/functionsDB.js';
 
 dotenv.config();
 
@@ -23,7 +23,6 @@ async  function login(req, res){
         return res.status(400).send({status:"Error",message:"Error durante login"})
     }
     else {
-        console.log(usuarioAResvisar);
         const tokenSession = jsonwebtoken.sign({
             name: usuarioAResvisar.usuario_cliente,
             mail: usuarioAResvisar.mail_cliente,
@@ -49,10 +48,12 @@ async function register(req, res) {
         if (usuarioARevisar) {
             return res.status(400).send({ status: "error", Message: "este usuario ya existe" });
         } else {
-            const hashPassword = await bcryptjs.hash(password, 5);
+            const salt = await bcryptjs.genSalt(10);
+            const hashPassword = await bcryptjs.hash(password, salt);
+            const unique = await bcryptjs.hash(email, salt);
             try {
-                agregarNuevoCliente(DB_host, DB_user, DB_password, DB_database, user, email, hashPassword);
-                return res.status(201).send({Status:"ok",Message: "usuario agregado",redirect:"./login.html"});
+                agregarNuevoCliente(DB_host, DB_user, DB_password, DB_database, user, email, hashPassword, unique);
+                return res.status(201).send({Status:"ok",Message: "usuario agregado", unique: unique});
             } catch (error) {
                 console.error('Error al agregar usuario:', error);
                 return res.status(400).send({ status: "error",message: "error al agregar al usuario"});
@@ -64,8 +65,28 @@ async function register(req, res) {
     }
 }
 
+export async function confirm_email(req, res) {
+    const unique =req.query.unique;
+    const user = req.query.user;
+    if (!unique) {
+        return res.status(400).send({ status: "error", message: "los campos están incompletos" });
+    }
+    try {
+        const confirm_unique = await confirmar_unique(DB_host, DB_user, DB_password, DB_database, unique, user);
+        if (confirm_unique) {
+            return res.status(201).send({ status: "ok", message: "usuario verificado" });
+            
+        } else {
+            return res.status(400).send({ status: "error", message: "unique incorrecto" });
+        }
+    } catch (error) {
+        console.error('Error al verificar usuario:', error);
+        return res.status(500).send({ status: "error", message: "Error al verificar usuario" });
+    }
+}
 
 export const methods = {
     login,
-    register
+    register,
+    confirm_email,
 }

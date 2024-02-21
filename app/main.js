@@ -27,4 +27,6 @@ app.post("/api/register", registration.register);
 app.post("/api/login", registration.login);
 app.post("/api/alquilar", authentication.isUser, alquilar.cargarAlquileres);
 
-// app.post("/api/matchmaking", authentication.isUser, );
+app.get("/api/confirm_email", registration.confirm_email);
+
+// app.post("/api/matchmaking", authentication.isUser );

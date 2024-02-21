@@ -64,6 +64,8 @@
                     <p class="olvidaste_contraseña" title="¿Olvidaste tu contraseña?">¿Has olvidado tu contraseña?</p>
                 </div>
                 <p class="error escondido">Error al registrarse</p>
+                <p id="exito" class="exito escondido">Registro Exitoso</p>
+                <p id="exito2" class="exito escondido">Confirma el Email para Iniciar Sesión</p>
                 <div class="button">
                     <button class="boton_registrarse" type="submit" title="Registrarse">Registrarse</button>
                     <span id="loader_login" class="loader escondido"></span>
@@ -100,6 +102,8 @@
         </div>
     </footer>
     <script src="../JS/bootstrap.bundle.min.js"></script>
-    <script src="../JS/singUp.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('gN3jQzW3W1jrvMUft')</script>
+    <script type="module" src="../JS/singUp.js"></script>
 </body>
 </html>
