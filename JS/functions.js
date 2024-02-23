@@ -169,13 +169,3 @@ export function noLogued(registerPageSection){
     sectionNoLogued.appendChild(redirectNoLoguedDiv);
     registerPageSection.appendChild(sectionNoLogued);
 }
-
-export function emailconfirmacion(formData) {
-
-    emailjs.send("Set_paddle","confirmacion_email", formData)
-        .then(function(response) {
-            console.log('Correo electrónico enviado correctamente!', response);
-        }, function(error) {
-            console.error('Error al enviar el correo electrónico:', error);
-        });
-};

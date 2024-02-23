@@ -3,6 +3,7 @@ import bcryptjs from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
 
 import { usuarioExiste, agregarNuevoCliente, verificarUsuarioYContraseña, confirmar_unique } from '../helpers/functionsDB.js';
+import { methods as sendEmail } from '../helpers/mailer.js';
 
 dotenv.config();
 
@@ -17,7 +18,6 @@ async  function login(req, res){
     if(!email || !password){
         return res.status(400).send({status:"Error",message:"Los campos están incompletos"})
     }
-
     const usuarioAResvisar = await verificarUsuarioYContraseña(DB_host, DB_user, DB_password, DB_database, email, password);
     if(!usuarioAResvisar){
         return res.status(400).send({status:"Error",message:"Error durante login"})
@@ -53,6 +53,7 @@ async function register(req, res) {
             const unique = await bcryptjs.hash(email, salt);
             try {
                 agregarNuevoCliente(DB_host, DB_user, DB_password, DB_database, user, email, hashPassword, unique);
+                sendEmail.sendEmailConfirmation(email, user, unique);
                 return res.status(201).send({Status:"ok",Message: "usuario agregado", unique: unique});
             } catch (error) {
                 console.error('Error al agregar usuario:', error);

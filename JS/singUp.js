@@ -7,8 +7,6 @@ var password = document.getElementById('password');
 const loader_login = document.getElementById('loader_login');
 const botonIniciarSesion = document.querySelector('.boton_registrarse');
 
-import { emailconfirmacion } from "./functions.js";
-
 
 document.getElementById("register-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -30,7 +28,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     });
     const resJson = await res.json();
-    if (!res.ok) {
+    if (resJson.Status === "error") {
         mensajeExito.classList.toggle("escondido",true);
         mensajeExito2.classList.toggle("escondido",true);
         mensajeEroor.classList.toggle("escondido",false);
@@ -43,12 +41,6 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         mensajeExito2.classList.toggle("escondido",false);
         loader_login.classList.toggle("escondido",true);
         botonIniciarSesion.textContent = 'Registrarse';
-        const formData = {
-            name: user,
-            verification_link: 'http://localhost:3050/api/confirm_email?unique=' + resJson.unique+"&user="+user,
-            reply_to: email,
-        };
-        emailconfirmacion(formData);
     }
 });
 
