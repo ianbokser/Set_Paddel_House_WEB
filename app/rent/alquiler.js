@@ -12,10 +12,11 @@ const DB_database = process.env.DB_database;
 async function cargarAlquileres(req, res) {
     const token = req.body.token;
     const date = req.body.date;
+    const hour = req.body.hour;
     const tokenData = jsonwebtoken.verify(token, process.env.JWT_SECRET);
     if (tokenData) {
         const id_cliente = tokenData.id_cliente;
-        const alquileres = await cargarAlquiler(DB_host, DB_user, DB_password, DB_database, id_cliente, date);
+        const alquileres = await cargarAlquiler(DB_host, DB_user, DB_password, DB_database, id_cliente, date, hour);
         const tokenAlquiler = jsonwebtoken.sign({
             id_cliente: id_cliente,
             id_alquiler: alquileres.insertId,

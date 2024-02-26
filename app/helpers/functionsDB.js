@@ -70,8 +70,9 @@ export async function agregarNuevoCliente(_host, _user, _password, _database, us
                 reject(err);
                 return;
             }
-            const query = 'INSERT INTO clientes (usuario_cliente, mail_cliente, password_cliente, hash_unico_cliente) VALUES (?, ?, ?, ?)';
-            connection.query(query, [usuario, email, contraseña, unique], (error, results) => {
+            const when_it_was_cliente = new Date();
+            const query = 'INSERT INTO clientes (usuario_cliente, mail_cliente, password_cliente, hash_unico_cliente, when_it_was_cliente) VALUES (?, ?, ?, ?, ?)';
+            connection.query(query, [usuario, email, contraseña, unique, when_it_was_cliente], (error, results) => {
                 if (error) {
                     console.error('Error al ejecutar la consulta de inserción:', error);
                     reject(error);
@@ -127,7 +128,7 @@ export async function verificarUsuarioYContraseña(_host, _user, _password, _dat
         });
     });
 }
-export async function cargarAlquiler(_host, _user, _password, _database, id_cliente, fecha_alquiler) {
+export async function cargarAlquiler(_host, _user, _password, _database, id_cliente, date, hour) {
     const connection = mysql.createConnection({
         host: _host,
         user: _user,
@@ -142,10 +143,10 @@ export async function cargarAlquiler(_host, _user, _password, _database, id_clie
                 reject(err);
                 return;
             }
-
-            const query = 'INSERT INTO alquiler (id_cliente, fecha_del_alquiler) VALUES (?, ?)';
+            const when_it_was_alquiler = new Date();
+            const query = 'INSERT INTO alquiler (id_cliente, date, hour, when_it_was_alquiler) VALUES (?, ?, ?, ?)';
             
-            connection.query(query, [id_cliente, fecha_alquiler], (error, results) => {
+            connection.query(query, [id_cliente, date, hour, when_it_was_alquiler], (error, results) => {
                 if (error) {
                     console.error('Error al ejecutar la consulta:', error);
                     reject(error);

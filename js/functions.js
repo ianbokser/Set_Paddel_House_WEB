@@ -80,7 +80,7 @@ export function alquilarLoguarse(register_page,error){
         <p>No tienes cuenta? <a class="text_decoration" href="./singUp.html" title="Ir a la página de registro">Registrarse</a></p>
     </div>
     <div class="ya_tiene_cuenta">
-        <p>Ya tienes cuenta? <a class="text_decoration" href="./logIn" title="Iniciar sesión">Inicia Sesión</a></p>
+        <p>Ya tienes cuenta? <a class="text_decoration" href="./logIn.html" title="Iniciar sesión">Inicia Sesión</a></p>
     </div>
     `;-
 

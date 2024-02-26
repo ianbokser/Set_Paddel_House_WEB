@@ -28,7 +28,8 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     });
     const resJson = await res.json();
-    if (resJson.Status === "error") {
+    console.log(resJson);
+    if (resJson.status === "error") {
         mensajeExito.classList.toggle("escondido",true);
         mensajeExito2.classList.toggle("escondido",true);
         mensajeEroor.classList.toggle("escondido",false);

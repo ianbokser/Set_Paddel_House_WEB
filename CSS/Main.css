@@ -68,6 +68,13 @@ body {
   display: flex !important;
   justify-content: space-around !important;
 }
+.header .nav .img_logo {
+  width: 135px;
+  min-width: 135px;
+}
+.header .nav .margin_collapse {
+  margin: 0;
+}
 .header .nav .user_class {
   margin: 40px 5rem;
   display: flex;
@@ -538,4 +545,94 @@ body {
 }
 .section_no_logued .redirect_no_logued > a:hover {
   text-decoration: underline;
+}
+
+.title {
+  color: rgb(0, 255, 76);
+  margin-bottom: 20px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid rgb(0, 255, 76);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: rgb(0, 255, 76);
+  box-shadow: 0 0 5px rgba(0, 255, 76, 0.5);
+}
+
+.container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.time .time_input_date {
+  width: 100%;
+  margin-right: 1rem;
+}
+.time .time_input_date .input-date {
+  margin: 0;
+}
+.time .dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.time .dropdown .dropbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 255, 76);
+  border-radius: 5px;
+  color: black;
+  width: 5rem;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  max-height: 150px; /* Máxima altura para mostrar 5 horas */
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content .libre {
+  background-color: rgb(0, 255, 76);
+}
+.dropdown-content .ocupado {
+  background-color: red;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
 }/*# sourceMappingURL=Main.css.map */

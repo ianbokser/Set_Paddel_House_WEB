@@ -24,6 +24,7 @@ async  function login(req, res){
     }
     else {
         const tokenSession = jsonwebtoken.sign({
+            id_cliente: usuarioAResvisar.id_cliente,
             name: usuarioAResvisar.usuario_cliente,
             mail: usuarioAResvisar.mail_cliente,
             descripcion: usuarioAResvisar.descripcion_cliente,
@@ -54,7 +55,7 @@ async function register(req, res) {
             try {
                 agregarNuevoCliente(DB_host, DB_user, DB_password, DB_database, user, email, hashPassword, unique);
                 sendEmail.sendEmailConfirmation(email, user, unique);
-                return res.status(201).send({Status:"ok",Message: "usuario agregado", unique: unique});
+                return res.status(201).send({Status:"ok",Message: "usuario agregado"});
             } catch (error) {
                 console.error('Error al agregar usuario:', error);
                 return res.status(400).send({ status: "error",message: "error al agregar al usuario"});
@@ -75,8 +76,7 @@ export async function confirm_email(req, res) {
     try {
         const confirm_unique = await confirmar_unique(DB_host, DB_user, DB_password, DB_database, unique, user);
         if (confirm_unique) {
-            return res.status(201).send({ status: "ok", message: "usuario verificado" });
-            
+            return res.redirect('http://127.0.0.1:5501/pages/logIn.html');
         } else {
             return res.status(400).send({ status: "error", message: "unique incorrecto" });
         }
