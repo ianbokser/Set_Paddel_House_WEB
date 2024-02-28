@@ -26,7 +26,7 @@ app.post("/api/user_description", authentication.isUser, giveuser.user_descripti
 app.post("/api/register", registration.register);
 app.post("/api/login", registration.login);
 app.post("/api/alquilar", authentication.isUser, alquilar.cargarAlquileres);
-
 app.get("/api/confirm_email", registration.confirm_email);
+app.post("/api/busy_hours", authentication.isUser, alquilar.busy_hours);
 
 // app.post("/api/matchmaking", authentication.isUser );

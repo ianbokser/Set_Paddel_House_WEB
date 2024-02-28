@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import jsonwebtoken from 'jsonwebtoken';
 
-import { cargarAlquiler } from '../helpers/functionsDB.js';
+import { cargarAlquiler, busyHours } from '../helpers/functionsDB.js';
 dotenv.config();
 
 const DB_host = process.env.DB_host;
@@ -26,7 +26,18 @@ async function cargarAlquileres(req, res) {
         res.status(400).send({ status: "error", message: "Error al verificar el token" });
     }
 }
+async function busy_hours (req, res) {
+    const date = req.body.date;
+    const busy_hours = await busyHours(DB_host, DB_user, DB_password, DB_database, date);
+    if (busy_hours) {
+        res.status(200).send({Status:"ok", busy_hours: busy_hours});
+    } else {
+        res.status(400).send({ status: "error", message: "Error al verificar las horas ocupadas" });
+    }
+}
+
 
 export const methods = {
     cargarAlquileres,
+    busy_hours,
 }

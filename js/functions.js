@@ -1,3 +1,4 @@
+
 export function crateToken(token, nombre){
     const tiempoExpiracion = 3600 * 1000;
     const fechaExpiracion = new Date();
@@ -168,4 +169,36 @@ export function noLogued(registerPageSection){
     sectionNoLogued.appendChild(noLoguedDiv);
     sectionNoLogued.appendChild(redirectNoLoguedDiv);
     registerPageSection.appendChild(sectionNoLogued);
+}
+
+export async function horasOcupadas(token, date) {
+    try {
+        const response = await fetch("http://localhost:3050/api/busy_hours", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: token,
+                date: date,
+            })
+        });
+        const horasOcupadas = await response.json();
+        if (horasOcupadas.Status === "ok") {
+            return horasOcupadas.busy_hours;
+        } else {
+            throw new Error("Error: " + horasOcupadas.Message);
+        }
+    } catch (error) {
+        console.error("Error en la solicitud:", error);
+        throw error;
+    }
+}
+
+export function checkSelectedDate(date, error_fecha) {
+    if (date === "") {
+        error_fecha.classList.toggle("escondido",false);
+    } else {
+        error_fecha.classList.toggle("escondido",true);
+    }
 }

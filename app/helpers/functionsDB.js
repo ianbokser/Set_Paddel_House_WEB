@@ -208,3 +208,32 @@ export async function confirmar_unique(_host, _user, _password, _database, uniqu
         });
     });
 }
+
+export async function busyHours(DB_host, DB_user, DB_password, DB_database, date) {
+    const connection = mysql.createConnection({
+        host: DB_host,
+        user: DB_user,
+        password: DB_password,
+        database: DB_database,
+    });
+    return new Promise((resolve, reject) => {
+        connection.connect((err) => {
+            if (err) {
+                console.error('Error al conectar a la base de datos:', err);
+                reject(err);
+                return;
+            }
+            const query = 'SELECT hour FROM alquiler WHERE date = ?';
+            connection.query(query, [date], (error, results) => {
+                if (error) {
+                    console.error('Error al ejecutar la consulta:', error);
+                    reject(error);
+                    return;
+                }
+                const busyHours = results.map(row => row.hour);
+                resolve(busyHours);
+                connection.end();
+            });
+        });
+    });
+}

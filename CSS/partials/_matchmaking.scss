@@ -62,8 +62,8 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 120px;
-  max-height: 150px; /* Máxima altura para mostrar 5 horas */
-  overflow-y: auto; /* Permitir desplazamiento vertical */
+  max-height: 150px;
+  overflow-y: auto;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   .libre{
