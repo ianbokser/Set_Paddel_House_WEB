@@ -195,10 +195,134 @@ export async function horasOcupadas(token, date) {
     }
 }
 
-export function checkSelectedDate(date, error_fecha) {
-    if (date === "") {
-        error_fecha.classList.toggle("escondido",false);
-    } else {
-        error_fecha.classList.toggle("escondido",true);
+export function dropdown(busy_hours){
+    if (busy_hours === "") {
+        console.log(busy_hours);
     }
+    var horasContainer = document.getElementById("horas");
+    for (var i = 8; i <= 26; i++) {
+        var hora = i % 24;
+        var horaFormato = hora < 10 ? "0" + hora : hora;
+        var horaString = horaFormato + ":00";
+        var nuevoDiv = document.createElement("div");
+        var ocupado = false;
+        for (var j = 0; j < busy_hours.length; j++) {
+            if (busy_hours[j].trim() === horaString) {
+                ocupado = true;
+                break;
+            }
+        }
+        if (ocupado) {
+            nuevoDiv.classList.add("horas_time", "ocupado");
+        } else {
+            nuevoDiv.classList.add("horas_time", "libre");
+        }
+        var nuevoParrafo = document.createElement("p");
+        nuevoParrafo.classList.add("horarios");
+        nuevoParrafo.textContent = horaString;
+        nuevoDiv.appendChild(nuevoParrafo);
+        horasContainer.appendChild(nuevoDiv);
+    }
+    const cantHorasDiv = document.createElement('div');
+    cantHorasDiv.classList.add('cant_horas');
+    cantHorasDiv.id = 'cant_horas';
+    const pCuantasHoras = document.createElement('p');
+    pCuantasHoras.classList.add('p_cuantas_horas');
+    pCuantasHoras.textContent = 'Cuantas horas deseas jugar?';
+    cantHorasDiv.appendChild(pCuantasHoras);
+    const cantHorariosSection = document.createElement('section');
+    cantHorariosSection.classList.add('cant_horarios');
+    const horasArray = ['1:00 hora', '1:30 hora', '2:00 horas'];
+    horasArray.forEach(hora => {
+    const horariosTimeDiv = document.createElement('div');
+    horariosTimeDiv.classList.add('horarios_time');
+
+    const cantidadHorasJugarP = document.createElement('p');
+    cantidadHorasJugarP.classList.add('cantidad_horas_jugar');
+    cantidadHorasJugarP.textContent = hora;
+
+    horariosTimeDiv.appendChild(cantidadHorasJugarP);
+    cantHorariosSection.appendChild(horariosTimeDiv);
+    });
+    cantHorasDiv.appendChild(cantHorariosSection);
+    const horasDiv = document.getElementById('horas');
+    horasDiv.insertAdjacentElement('afterend', cantHorasDiv);
+}
+    export function checkSelectedDate(date, error_fecha) {
+        if (date === "") {
+            error_fecha.classList.toggle("escondido",false);
+        }
+}
+
+export function fechaAnterior(){
+    if (date.value < new Date().toISOString().split('T')[0]){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+export function eliminarHoras() {
+    var horasContainer = document.getElementById("horas");
+    while (horasContainer.firstChild) {
+        horasContainer.removeChild(horasContainer.firstChild);
+    }
+    const container = document.getElementById('cant_horas');
+    container.innerHTML = '';
+}
+
+
+let horaSeleccionadaGlobal = "";
+export function horaSeleccionada() {
+    var horasTimeElements = document.querySelectorAll(".horas_time");
+    horasTimeElements.forEach(function(element) {
+        element.addEventListener("click", function() {
+            horasTimeElements.forEach(function(el) {
+                el.classList.remove("seleccionada");
+            });
+            element.classList.add("seleccionada");
+            horaSeleccionadaGlobal = element.querySelector(".horarios").textContent;
+        });
+    });
+    return horaSeleccionadaGlobal;
+}
+
+export function scrollHoras(){
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const horas = document.getElementById('horas');
+    horas.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - horas.offsetLeft;
+        scrollLeft = horas.scrollLeft;
+    });
+    horas.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    horas.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    horas.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - horas.offsetLeft;
+        const walk = (x - startX) * 1;
+        horas.scrollLeft = scrollLeft - walk;
+    });
+}
+
+let cantHorasSeleccionadasGlobal = "";
+export function cantHorasSeleccionadas(horaSeleccionada, busy_hours) {
+    var horarios_time = document.querySelectorAll(".horarios_time");
+    horarios_time.forEach(function(element) {
+        element.addEventListener("click", function() {
+            horarios_time.forEach(function(el) {
+                el.classList.remove("seleccionada");
+            });
+            element.classList.add("seleccionada");
+            cantHorasSeleccionadasGlobal = element.querySelector(".cantidad_horas_jugar").textContent;
+        });
+    });
+    return horaSeleccionadaGlobal;
 }

@@ -192,7 +192,7 @@ body {
   border: 1px solid white;
   background: linear-gradient(rgba(24, 210, 102, 0.7529411765), rgba(0, 79, 30, 0.8));
   padding: 1.5rem;
-  width: 50%;
+  width: 70%;
 }
 @media (max-width: 810px) {
   .Sing_Up .register_page {
@@ -254,6 +254,7 @@ body {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  margin: 1rem;
 }
 .Sing_Up .register_page .exito {
   color: rgb(0, 255, 76);
@@ -573,66 +574,101 @@ body {
   text-align: center;
 }
 
-.time {
+.horas {
+  width: 100%;
+  height: 100px;
+  overflow-x: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  padding: 1rem;
+  border: 3px solid black;
+  border-radius: 20px;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.time .time_input_date {
-  width: 100%;
-  margin-right: 1rem;
+.horas::-webkit-scrollbar {
+  display: none;
 }
-.time .time_input_date .input-date {
-  margin: 0;
-}
-.time .dropdown {
+.horas .horas_time {
   position: relative;
-  display: inline-block;
-  width: 100%;
-}
-.time .dropdown .dropbtn {
+  width: 80px;
+  min-width: 80px;
+  margin-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 255, 76);
+  border: 1px solid black;
   border-radius: 5px;
-  color: black;
-  width: 5rem;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
+  padding: 0.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
-
-.dropdown-content {
-  display: none;
+.horas .horas_time::after {
+  content: "";
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 120px;
-  max-height: 150px;
-  overflow-y: auto;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  top: 50%;
+  right: -1rem;
+  height: 1px;
+  background-color: black;
+  width: 1rem;
+  transform: translateY(-50%);
 }
-.dropdown-content .libre {
-  background-color: rgb(0, 255, 76);
+.horas .horas_time .horarios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
-.dropdown-content .ocupado {
+.horas .ocupado {
   background-color: red;
 }
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.horas .libre {
+  background-color: rgb(0, 255, 76);
+}
+.horas .seleccionada {
+  background-color: rgb(92, 92, 219);
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
+.cant_horas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
 }
-
-.show {
-  display: block;
+.cant_horas .p_cuantas_horas {
+  font-size: 2rem;
+}
+.cant_horas .cant_horarios {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.cant_horas .cant_horarios .horarios_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cant_horas .cant_horarios .horarios_time .cantidad_horas_jugar {
+  margin: 0;
+}
+.cant_horas .cant_horarios .horarios_time.ocupado {
+  background-color: red;
+}
+.cant_horas .cant_horarios .horarios_time.libre {
+  background-color: rgb(0, 255, 76);
+}
+.cant_horas .cant_horarios .horarios_time.seleccionada {
+  background-color: rgb(92, 92, 219);
 }/*# sourceMappingURL=Main.css.map */

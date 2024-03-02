@@ -51,20 +51,31 @@
                         <label for="date" class="sr-only">date</label>
                         <input type="date" class="custom-input input-date" name="date" id="date" title="Seleccionar fecha de alquiler">
                     </div>
-                    <div class="time_dropdown">
-                        <div class="dropdown" id="timeDropdown">
-                            <div class="dropbtn">Hora</div>
-                            <div class="dropdown-content" id="timeOptions"></div>
-                        </div>
+                    <div class="horas" id="horas">
                     </div>
-                </div>    
+                    <!-- <div class="cant_horas">
+                        <p class="p_cuantas_horas">Cuantas horas deseas jugar?</p>
+                        <section class="cant_horarios">
+                            <div class="horarios_time">
+                                <p class="cantidad_horas_jugar">1:00 hora</p>
+                            </div>
+                            <div class="horarios_time">
+                                <p class="cantidad_horas_jugar">1:30 hora</p>
+                            </div>
+                            <div class="horarios_time">
+                                <p class="cantidad_horas_jugar">2:00 horas</p>
+                            </div>
+                        </section>
+                    </div> -->
+                </div>
                 <p class="error escondido">Inicia Sesión antes de alquilar</p>
                 <div class="button">
-                    <button class="boton_registrarse" type="submit" title="Enviar solicitud de alquiler">alquilar</button>
+                    <button class="boton_registrarse" type="submit" title="Enviar solicitud de alquiler">Alquilar</button>
                     <span id="loader_login" class="loader escondido"></span>
                     <p class="alquiler_exitoso escondido" id="alquiler_exitoso">alquiler exitoso</p>
                 </div>
                 <p class="error escondido" id="error_fecha">Elige fecha antes de alquilar</p>
+                <p class="error escondido" id="error_fecha_anterior">Fecha invalida</p>
             </form>
         </section>
     </main>
